@@ -46,14 +46,18 @@ int a = ps.executeUpdate();
       System.out.println(ex);
     }
   }
-public void editData(String id, String name, String location, String photo, String description){
-  try{
-String sql = "Update travel set name ='" +name+ "' , location = '"+location+"', description='"+ description+ "', photo='"+ photo+"' where id'" +id;
-    int a = stmt.executeUpdate(sql);
-  }catch(Exception ex){
-    System.out.println(ex);
-  }
-}
+  public void editData(String id ,String name , String location , String photo , String description){
+      try{
+        System.out.println("name = " + name);
+        System.out.println("location = " + location);
+        System.out.println("description = " + description);
+        System.out.println("photo = " + photo);
+        String sql = "update travel set name = '" + name + "' , location = '" + location + "' , description = '" + description + "' , photo = '" + photo + "' where id = " + id;
+        int a = stmt.executeUpdate(sql);
+      }catch(Exception ex){
+        System.out.println(ex);
+      }
+    }
 public void deleteData(String id){
 try{
   String sql = "delete from travel where id=" +id+";";
